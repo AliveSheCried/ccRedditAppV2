@@ -4,7 +4,7 @@ Reddit Client from [Codecademy.com's](https://www.codecademy.com/) front end eng
 
 [Example implementation](https://reddit-client.netlify.app/).
 
-# Technologies used
+## Technologies used
 
 - **css & scss**
 - **javascript**
@@ -14,14 +14,14 @@ Reddit Client from [Codecademy.com's](https://www.codecademy.com/) front end eng
 - **tdd with jest & enzyme**
 - **react-router v6**
 
-# Features
+## Features
 
 1. Load subReddits
 2. Load posts
 3. Load post comments
 4. Search post titles
 
-# Future work
+## Future work
 
 1. Convert to css-in-js
 2. Dark mode
