@@ -6,7 +6,7 @@ Reddit Client from [Codecademy.com's](https://www.codecademy.com/) front end eng
 
 ## Technologies used
 
-- **css & scss**
+- **css, scss & css modules**
 - **javascript**
 - **react**
 - **react-loading-skeleton**
