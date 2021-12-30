@@ -1,10 +1,18 @@
+import React from "react";
 import { shallow } from "enzyme";
 import App from "./App";
 
 describe("Tests app.js", () => {
-  // First test - aim to work from the most granular outward
-  test("Render div with test text", () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.find("div").text()).toBe("TEST");
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<App />);
   });
+  // First test - aim to work from the most granular outward
+  test("Render Logo module", () => {
+    expect(wrapper.find("Navigation")).toHaveLength(1);
+  });
+  // test("Render Search module", () => {
+  //   expect(wrapper.find("Search")).toHaveLength(1);
+  // });
 });

@@ -1,0 +1,43 @@
+@mixin icons($fill, $width, $height) {
+  fill: $fill;
+  width: $width;
+  height: $height;
+}
+
+@mixin fbox(
+  $content: flex-start,
+  $items: stretch,
+  $direction: row,
+  $wrap: nowrap
+) {
+  display: flex;
+  justify-content: $content;
+  align-items: $items;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+//experiment - do not repeat - more complex than writing the code
+@mixin box(
+  $p_top: 0,
+  $p_right: 0,
+  $p_bot: 0,
+  $p_left: 0,
+  $m_top: 0,
+  $m_right: 0,
+  $m_bot: 0,
+  $m_left: 0,
+  $width: auto,
+  $m_width: none,
+  $back_color: transparent,
+  $color: var(--color-black),
+  $bdr_rad: 0
+) {
+  padding: $p_top $p_right $p_left $p_bot;
+  margin: $m_top $m_right $m_left $m_bot;
+  width: $width;
+  max-width: $m_width;
+  background-color: $back_color;
+  color: $color;
+  border-radius: $bdr_rad;
+}

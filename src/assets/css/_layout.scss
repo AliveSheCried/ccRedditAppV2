@@ -1,0 +1,8 @@
+body {
+  display: grid;
+  gap: var(--spacing-2);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(30rem, 36rem, 4rem), 1fr)
+  );
+}
