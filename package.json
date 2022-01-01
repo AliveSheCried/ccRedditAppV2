@@ -45,12 +45,6 @@
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ],
-    "moduleNameMapper": {
-      "^@app(.*)$": "<rootDir>/src/ui/app$1"
-    },
-    "setupFiles": [
-     "<rootDir>/config/jest/setupTests.js"
-   ]
+    ]
   }
 }

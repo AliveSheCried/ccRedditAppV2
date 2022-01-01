@@ -12,7 +12,7 @@ describe("Tests app.js", () => {
   test("Render Logo module", () => {
     expect(wrapper.find("Navigation")).toHaveLength(1);
   });
-  // test("Render Search module", () => {
-  //   expect(wrapper.find("Search")).toHaveLength(1);
-  // });
+  test("Render Posts module", () => {
+    expect(wrapper.find("Posts")).toHaveLength(3);
+  });
 });

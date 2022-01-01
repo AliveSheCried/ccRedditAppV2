@@ -8,9 +8,7 @@ describe("Navigation page must render", () => {
   beforeEach(() => {
     wrapper = shallow(<Navigation />);
   });
-  //<Navigation /> will have 4 children components only;
-  //The tests below will check that  both the relevant html and child comopnents are present;
-  //Mounted tests?  TBC
+
   test("should render header html element", () => {
     expect(wrapper.find("header")).toHaveLength(1);
   });
@@ -24,5 +22,9 @@ describe("Navigation page must render", () => {
   test("Render QuickNav component", () => {
     //console.log(wrapper.debug());
     expect(wrapper.find("QuickNav")).toHaveLength(1);
+  });
+  test("Render Menu component", () => {
+    //console.log(wrapper.debug());
+    expect(wrapper.find("Menu")).toHaveLength(1);
   });
 });

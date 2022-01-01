@@ -107,7 +107,7 @@ button {
           transform: scale(1.01);
 }
 
-body {
+#root {
   display: -ms-grid;
   display: grid;
   gap: var(--spacing-2);
