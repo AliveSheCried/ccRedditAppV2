@@ -23,3 +23,5 @@ describe("Search component will render & function correctly", () => {
     expect(wrapper.find(".search__form-input")).toHaveLength(1);
   });
 });
+
+///need to add test coverage for submit; pending solution to issue raised at Stackoverflow for IconCard.test.js

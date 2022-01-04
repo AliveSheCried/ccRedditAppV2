@@ -1,38 +1,17 @@
 import React from "react";
 import { IconCard } from "./iconcard/IconCard";
-import { svgTop, svgNew, svgRising, svgHot } from "../../assets/images/svg";
+import { STATIC } from "./static-menu";
 
 export const QuickNav = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
+  const staticMenu = STATIC.map((menu) => (
+    <IconCard
+      key={menu.id}
+      svg={menu.svg}
+      label={menu.label}
+      endpoint={menu.endpoint}
+      //handleSubmit={handleSubmit}
+    />
+  ));
 
-  return (
-    <form className="icons">
-      <IconCard
-        svg={svgHot}
-        label="hot"
-        endpoint="r/test"
-        handleSubmit={handleSubmit}
-      />
-      <IconCard
-        svg={svgNew}
-        label="new"
-        endpoint="r/test"
-        handleSubmit={handleSubmit}
-      />
-      <IconCard
-        svg={svgTop}
-        label="Top"
-        endpoint="r/test"
-        handleSubmit={handleSubmit}
-      />
-      <IconCard
-        svg={svgRising}
-        label="rising"
-        endpoint="r/test"
-        handleSubmit={handleSubmit}
-      />
-    </form>
-  );
+  return <form className="icons">{staticMenu}</form>;
 };

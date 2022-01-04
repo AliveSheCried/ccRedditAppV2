@@ -1,6 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
+import {
+  getSubRedditData,
+  subRedditSelector,
+  subRedditErrorSelector,
+  subRedditLoadingSelector,
+} from "../../store/subReddit-slice";
+import { useDispatch, useSelector } from "react-redux";
 
 export const Menu = () => {
+  const dispatch = useDispatch();
+  const subReddits = useSelector(subRedditSelector);
+  console.log(subReddits);
+
+  useEffect(() => {
+    dispatch(getSubRedditData());
+  }, [dispatch]);
+
   return (
     <ul className="menu-full">
       <li className="menu-full__item">
