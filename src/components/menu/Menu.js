@@ -5,12 +5,13 @@ import {
   subRedditErrorSelector,
   subRedditLoadingSelector,
 } from "../../store/subReddit-slice";
+import { setSubreddit } from "../../store/posts-slice";
 import { useDispatch, useSelector } from "react-redux";
 
 export const Menu = () => {
   const dispatch = useDispatch();
   const subReddits = useSelector(subRedditSelector);
-  console.log(subReddits);
+  //console.log(subReddits);
 
   useEffect(() => {
     dispatch(getSubRedditData());
@@ -18,26 +19,17 @@ export const Menu = () => {
 
   return (
     <ul className="menu-full">
-      <li className="menu-full__item">
-        <button type="button" className="menu-full__item--button">
-          menu a
-        </button>
-      </li>
-      <li className="menu-full__item">
-        <button type="button" className="menu-full__item--button">
-          menu b
-        </button>
-      </li>
-      <li className="menu-full__item">
-        <button type="button" className="menu-full__item--button">
-          menu c
-        </button>
-      </li>
-      <li className="menu-full__item">
-        <button type="button" className="menu-full__item--button">
-          menu d
-        </button>
-      </li>
+      {subReddits.map((sub) => (
+        <li className="menu-full__item" key={sub.id}>
+          <button
+            type="button"
+            className="menu-full__item--button"
+            onClick={() => dispatch(setSubreddit(sub.url))}
+          >
+            {sub.url}
+          </button>
+        </li>
+      ))}
     </ul>
   );
 };

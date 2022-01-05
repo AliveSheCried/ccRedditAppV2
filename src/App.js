@@ -6,9 +6,6 @@ function App() {
   return (
     <Fragment>
       <Navigation />
-
-      <Posts />
-      <Posts />
       <Posts />
     </Fragment>
   );

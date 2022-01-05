@@ -3,8 +3,11 @@ import { fetchData } from "../utils/api/fetchData";
 
 const initialState = {
   subReddits: [
-    { id: 1, url: "r/designporn" },
-    { id: 2, url: "r/dataisbeautiful" },
+    { id: 1, url: "r/designporn/" },
+    { id: 2, url: "r/dataisbeautiful/" },
+    { id: 3, url: "r/earthporn/" },
+    { id: 4, url: "r/itookapicture/" },
+    { id: 5, url: "r/imaginarymonsters/" },
   ],
   isLoading: false,
   isError: false,
