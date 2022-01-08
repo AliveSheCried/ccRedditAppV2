@@ -1,5 +1,7 @@
 import React from "react";
 import { Card } from "../../assets/ui/card/Card";
+import { convertUTCTimeToRelative } from "../../utils/convertTime/convert-time";
+
 //import { Comments } from "./comments/Comments";
 
 export const PostDetail = ({
@@ -12,6 +14,16 @@ export const PostDetail = ({
   id,
   permalink,
 }) => {
+  //check if post has image or not
+  const postImage = image.includes("jpg") ? (
+    <div className="post__img">
+      <img src={image} alt="post photograph" />
+    </div>
+  ) : null;
+
+  //convert received utc time to relative time
+  const postRelativeTime = convertUTCTimeToRelative(createdDate);
+
   return (
     <Card>
       <article>
@@ -19,13 +31,11 @@ export const PostDetail = ({
           <div className="post-meta__author">
             Posted by <span className="post-meta__author--blue">{author}</span>
           </div>
-          <div className="post-meta__time">{createdDate}</div>
+          <div className="post-meta__time">{postRelativeTime} ago</div>
         </div>
         <div className="post-title">{title}</div>
 
-        <div className="post-img">
-          <img src={image} alt="post photograph" />
-        </div>
+        {postImage && postImage}
         {/* <Comments /> */}
       </article>
     </Card>

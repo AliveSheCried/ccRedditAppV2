@@ -1,8 +1,26 @@
 #root {
-  display: grid;
-  gap: var(--spacing-2);
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(clamp(30rem, 36rem, 4rem), 1fr)
-  );
+  /////original wrapping grid layout
+  // display: grid;
+  // gap: var(--spacing-2);
+  // grid-template-columns: repeat(
+  //   auto-fit,
+  //   minmax(clamp(30rem, 36rem, 4rem), 1fr)
+  // );
+  /////flex box layout to cater for wrap of masonary
+  display: flex;
+  justify-content: space-between;
 }
+
+@media screen and (max-width: 685px) {
+  #root {
+    flex-wrap: wrap;
+  }
+}
+
+header {
+  min-width: 36rem;
+}
+
+// .posts__wrapper {
+//   width: auto;
+// }

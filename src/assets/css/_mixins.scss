@@ -28,15 +28,17 @@
   $m_bot: 0,
   $m_left: 0,
   $width: auto,
-  $m_width: none,
+  $ma_width: none,
+  $mi_width: none,
   $back_color: transparent,
   $color: var(--color-black),
   $bdr_rad: 0
 ) {
   padding: $p_top $p_right $p_left $p_bot;
-  margin: $m_top $m_right $m_left $m_bot;
+  margin: $m_top $m_right $m_bot $m_left;
   width: $width;
-  max-width: $m_width;
+  max-width: $ma_width;
+  min-width: $mi_width;
   background-color: $back_color;
   color: $color;
   border-radius: $bdr_rad;

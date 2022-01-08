@@ -1,5 +1,4 @@
-import React, { useEffect, Fragment } from "react";
-
+import React, { useEffect } from "react";
 import { PostDetail } from "./PostDetail";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -7,6 +6,14 @@ import {
   getPosts,
   getSubredditSelector,
 } from "../../store/posts-slice";
+import Masonry from "react-masonry-css";
+
+const breakpointColumnsObj = {
+  default: 4,
+  1100: 3,
+  700: 2,
+  500: 1,
+};
 
 export const Posts = () => {
   const dispatch = useDispatch();
@@ -31,5 +38,15 @@ export const Posts = () => {
     />
   ));
 
-  return <Fragment>{allPosts}</Fragment>;
+  // return <Fragment>{allPosts}</Fragment>;
+  //  return <div className="posts__wrapper">{allPosts}</div>;
+  return (
+    <Masonry
+      breakpointCols={breakpointColumnsObj}
+      className="my-masonry-grid"
+      columnClassName="my-masonry-grid_column"
+    >
+      {allPosts}
+    </Masonry>
+  );
 };

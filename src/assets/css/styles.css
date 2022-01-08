@@ -73,12 +73,12 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -86,9 +86,10 @@ button {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   padding: var(--spacing-2) var(--spacing-3) var(--spacing-3) var(--spacing-2);
-  margin: 0 0 0 var(--spacing-2);
+  margin: 0 0 var(--spacing-2) 0;
   width: auto;
-  max-width: 40rem;
+  max-width: 36rem;
+  min-width: 30rem;
   background-color: var(--color-white);
   color: var(--color-black);
   border-radius: var(--spacing-1);
@@ -108,11 +109,57 @@ button {
 }
 
 #root {
-  display: -ms-grid;
-  display: grid;
-  gap: var(--spacing-2);
-  -ms-grid-columns: (minmax(clamp(30rem, 36rem, 4rem), 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(clamp(30rem, 36rem, 4rem), 1fr));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 685px) {
+  #root {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+header {
+  min-width: 36rem;
+}
+
+.my-masonry-grid {
+  display: -webkit-box;
+  /* Not needed if autoprefixing */
+  display: -ms-flexbox;
+  /* Not needed if autoprefixing */
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: -30px;
+  /* gutter size offset */
+}
+
+.my-masonry-grid_column {
+  padding-left: 30px;
+  /* gutter size */
+  background-clip: padding-box;
+  -ms-flex-preferred-size: 30rem;
+      flex-basis: 30rem;
+  margin-left: 0.5em;
+}
+
+@media screen and (max-width: 685px) {
+  .my-masonry-grid_column {
+    margin-left: 0;
+  }
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  background: var(--color-white);
+  margin-bottom: 30px;
 }
 
 .search {
@@ -307,6 +354,23 @@ button {
   background-color: var(--color-base-shade-1);
   border-bottom: 1px solid var(--color-gold);
   border-right: 5px solid var(--color-gold);
+}
+
+.menu-collapsed {
+  margin-top: var(--spacing-6);
+  margin-bottom: var(--spacing-4);
+}
+
+.menu-collapsed__select {
+  border: none;
+  outline: none;
+  padding: 0.75em 0;
+  border-radius: var(--spacing-2);
+  background: var(--color-white);
+}
+
+.menu-collapsed__item {
+  width: 28rem;
 }
 
 .post-meta {

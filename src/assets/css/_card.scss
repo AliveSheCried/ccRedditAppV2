@@ -1,5 +1,5 @@
 .card {
-  @include fbox($content: center, $items: center, $direction: column);
+  @include fbox($content: flex-start, $items: flex-start, $direction: column);
   @include box(
     $p_top: var(--spacing-2),
     $p_bot: var(--spacing-2),
@@ -8,7 +8,8 @@
     $m_bot: var(--spacing-2),
     $back_color: var(--color-white),
     $bdr_rad: var(--spacing-1),
-    $m_width: 40rem
+    $ma_width: 36rem,
+    $mi_width: 30rem
   );
 
   transition: transform 500ms;

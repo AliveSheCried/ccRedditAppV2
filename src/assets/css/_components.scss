@@ -129,6 +129,24 @@
   }
 }
 
+///////////// menu collapsed
+.menu-collapsed {
+  margin-top: var(--spacing-6);
+  margin-bottom: var(--spacing-4);
+
+  &__select {
+    border: none;
+    outline: none;
+    padding: 0.75em 0;
+    border-radius: var(--spacing-2);
+    background: var(--color-white);
+  }
+
+  &__item {
+    width: 28rem;
+  }
+}
+
 ///////////// post
 .post {
   &-meta {
