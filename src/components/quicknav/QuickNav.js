@@ -9,7 +9,6 @@ export const QuickNav = () => {
       svg={menu.svg}
       label={menu.label}
       endpoint={menu.endpoint}
-      //handleSubmit={handleSubmit}
     />
   ));
 

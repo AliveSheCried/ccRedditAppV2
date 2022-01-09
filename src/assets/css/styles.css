@@ -278,23 +278,18 @@ header {
   fill: var(--color-base-shade-1);
   width: var(--spacing-5);
   height: var(--spacing-6);
-  fill: var(--color-text-light-grey);
+  fill: var(--color-base);
 }
 
 .icons__btn-label {
   color: var(--color-base-shade-1);
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.5rem;
 }
 
-.icons__btn:hover > .icons__btn-svg {
-  -webkit-transition: fill 200ms, -webkit-transform 500ms;
-  transition: fill 200ms, -webkit-transform 500ms;
-  transition: transform 500ms, fill 200ms;
-  transition: transform 500ms, fill 200ms, -webkit-transform 500ms;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  fill: var(--color-white);
+.icons__btn:hover {
+  -webkit-transition: background 500ms;
+  transition: background 500ms;
+  background: var(--color-pink);
 }
 
 .icons__btn:active, .icons__btn:focus {
@@ -336,9 +331,10 @@ header {
   border-left: none;
   border-right: none;
   border-bottom: 1px solid var(--color-base-shade-1);
-  color: var(--color-background-grey);
+  color: var(--color-text-light-grey);
   background-color: var(--color-base-shade-2);
   font-size: 1.5rem;
+  letter-spacing: 0.05rem;
   -webkit-transition: color 400ms, border-bottom 400ms, border-right 500ms;
   transition: color 400ms, border-bottom 400ms, border-right 500ms;
 }
@@ -350,10 +346,11 @@ header {
   border-right: 5px solid var(--color-pink);
 }
 
-.menu-full__item--button:active {
+.menu-full__item--button:active, .menu-full__item--button:focus {
   background-color: var(--color-base-shade-1);
   border-bottom: 1px solid var(--color-gold);
   border-right: 5px solid var(--color-gold);
+  color: var(--color-gold);
 }
 
 .menu-collapsed {
@@ -366,7 +363,10 @@ header {
   outline: none;
   padding: 0.75em 0;
   border-radius: var(--spacing-2);
-  background: var(--color-white);
+  background: var(--color-base-shade-2);
+  color: var(--color-gold);
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .menu-collapsed__item {
@@ -394,8 +394,8 @@ header {
   color: var(--color-text-light-grey);
 }
 
-.post-meta__author--blue {
-  color: var(--color-base);
+.post-meta__author--pink {
+  color: var(--color-pink);
   font-weight: 700;
 }
 

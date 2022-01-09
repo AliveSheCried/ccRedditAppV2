@@ -64,19 +64,26 @@
         var(--spacing-5),
         var(--spacing-6)
       );
-      fill: var(--color-text-light-grey);
+      fill: var(--color-base);
     }
 
     &-label {
       color: var(--color-base-shade-1);
-      font-size: 1.2rem;
-      font-weight: 700;
+      font-size: 1.5rem;
+      //font-weight: 700;
     }
 
-    &:hover > &-svg {
-      transition: transform 500ms, fill 200ms;
-      transform: scale(1.2);
-      fill: var(--color-white);
+    // &:hover > * {
+    //   transition: transform 500ms, fill 200ms;
+    //   transform: scale(1.2);
+    //   letter-spacing: 0.1rem;
+    //   fill: var(--color-white);
+    //   color: var(--color-white);
+    // }
+
+    &:hover {
+      transition: background 500ms;
+      background: var(--color-pink);
     }
 
     &:active,
@@ -108,9 +115,11 @@
       border-left: none;
       border-right: none;
       border-bottom: 1px solid var(--color-base-shade-1);
-      color: var(--color-background-grey);
+      color: var(--color-text-light-grey);
       background-color: var(--color-base-shade-2);
       font-size: 1.5rem;
+      //font-weight: 700;
+      letter-spacing: 0.05rem;
 
       transition: color 400ms, border-bottom 400ms, border-right 500ms;
 
@@ -120,10 +129,12 @@
         border-right: 5px solid var(--color-pink);
       }
 
-      &:active {
+      &:active,
+      &:focus {
         background-color: var(--color-base-shade-1);
         border-bottom: 1px solid var(--color-gold);
         border-right: 5px solid var(--color-gold);
+        color: var(--color-gold);
       }
     }
   }
@@ -139,7 +150,10 @@
     outline: none;
     padding: 0.75em 0;
     border-radius: var(--spacing-2);
-    background: var(--color-white);
+    background: var(--color-base-shade-2);
+    color: var(--color-gold);
+    font-weight: 700;
+    font-size: 1.5rem;
   }
 
   &__item {
@@ -156,8 +170,8 @@
     font-size: clamp(1.2rem, 5vw, 1.5rem);
     color: var(--color-text-light-grey);
 
-    &__author--blue {
-      color: var(--color-base);
+    &__author--pink {
+      color: var(--color-pink);
       font-weight: 700;
     }
   }

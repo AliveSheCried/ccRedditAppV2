@@ -15,11 +15,13 @@ export const PostDetail = ({
   permalink,
 }) => {
   //check if post has image or not
-  const postImage = image.includes("jpg") ? (
-    <div className="post__img">
-      <img src={image} alt="post photograph" />
-    </div>
-  ) : null;
+  console.log(image);
+  const postImage =
+    image.includes("jpg") || image.includes("gif") ? (
+      <div className="post__img">
+        <img src={image} alt="post photograph" />
+      </div>
+    ) : null;
 
   //convert received utc time to relative time
   const postRelativeTime = convertUTCTimeToRelative(createdDate);
@@ -29,7 +31,7 @@ export const PostDetail = ({
       <article>
         <div className="post-meta">
           <div className="post-meta__author">
-            Posted by <span className="post-meta__author--blue">{author}</span>
+            Posted by <span className="post-meta__author--pink">{author}</span>
           </div>
           <div className="post-meta__time">{postRelativeTime} ago</div>
         </div>
