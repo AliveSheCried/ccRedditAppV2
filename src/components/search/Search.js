@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useDispatch } from "react-redux";
 import { svgSearch } from "../../assets/images/svg";
+import { setSearch } from "../../store/posts-slice";
 
 export const Search = () => {
+  const dispatch = useDispatch();
+  const searchTerm = useRef();
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    const search = searchTerm.current.value.toLowerCase();
+    searchTerm.current.value = "";
+
+    dispatch(setSearch(search));
   };
 
   return (
@@ -17,7 +26,7 @@ export const Search = () => {
           placeholder="Search post titles"
           className="search__form-input"
           aria-label="Search posts"
-          //ref={searchTerm}
+          ref={searchTerm}
         />
       </form>
     </div>

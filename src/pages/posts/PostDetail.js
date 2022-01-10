@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "../../assets/ui/card/Card";
 import { convertUTCTimeToRelative } from "../../utils/convertTime/convert-time";
+import PostMeta from "./PostMeta";
 
 //import { Comments } from "./comments/Comments";
 
@@ -15,9 +16,9 @@ export const PostDetail = ({
   permalink,
 }) => {
   //check if post has image or not
-  console.log(image);
+  //console.log(image);
   const postImage =
-    image.includes("jpg") || image.includes("gif") ? (
+    image.includes("jpg") || image.includes("gif") || image.includes("png") ? (
       <div className="post__img">
         <img src={image} alt="post photograph" />
       </div>
@@ -38,6 +39,7 @@ export const PostDetail = ({
         <div className="post-title">{title}</div>
 
         {postImage && postImage}
+        <PostMeta score={score} comments={comments} />
         {/* <Comments /> */}
       </article>
     </Card>

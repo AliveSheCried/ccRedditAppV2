@@ -6,6 +6,7 @@ const initialState = {
   isLoading: false,
   isError: false,
   subreddit: "r/earthporn",
+  search: "",
 };
 
 const postSlice = createSlice({
@@ -27,6 +28,13 @@ const postSlice = createSlice({
       const url = action.payload.replace(/\/$/, "");
       state.subreddit = url;
     },
+    setSearch(state, action) {
+      const term = action.payload.toLowerCase();
+      state.search = term;
+    },
+    clearSearch(state) {
+      state.search = "";
+    },
   },
 });
 
@@ -40,6 +48,8 @@ export const {
   getPostStart,
   getPostSuccess,
   setSubreddit,
+  setSearch,
+  clearSearch,
 } = postSlice.actions;
 
 //selectors
@@ -47,6 +57,7 @@ export const getPostSelector = (state) => state.posts.posts;
 export const getPostErrorSelector = (state) => state.posts.isError;
 export const getPostLoadingSelector = (state) => state.posts.isLoading;
 export const getSubredditSelector = (state) => state.posts.subreddit;
+export const getSearchSelector = (state) => state.posts.search;
 
 /////////////// Thunk
 export const getPosts = (subreddit) => async (dispatch) => {

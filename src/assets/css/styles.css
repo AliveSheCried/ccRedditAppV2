@@ -401,42 +401,40 @@ header {
 
 .post-title {
   margin-top: var(--spacing-2);
+  margin-bottom: var(--spacing-2);
   width: 100%;
   font-size: clamp(1.6rem, 5vw, 2.5rem);
   color: var(--color-text-dark-grey);
   font-weight: 700;
 }
 
+.post__img {
+  margin-bottom: 1em;
+}
+
 .post-activity {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  position: relative;
-  color: var(--color-white);
+  background: var(--color-background-grey);
+  border-radius: 0.5rem;
+  color: var(--color-base-shade-3);
   font-size: clamp(1.2rem, 5vw, 1.5rem);
 }
 
-.post-activity > * {
-  position: absolute;
-  padding: var(--spacing-1);
-  top: -50px;
-  width: 8rem;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-.post-activity__item-ticks {
+.post__item-ticks {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -452,44 +450,29 @@ header {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  left: -30px;
+  margin: 0.5em;
+  padding-right: 0.5em;
 }
 
-.post-activity__item-comments {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  left: 50px;
-}
-
-.post-activity__item-svg {
-  fill: var(--color-base-shade-2);
+.post__item-svg {
+  fill: var(--color-gold);
   width: var(--spacing-6);
   height: var(--spacing-6);
-  -webkit-transition: fill 400ms;
-  transition: fill 400ms;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
 }
 
-.post-activity__item-svg:hover {
+.post__item-svg:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
   -webkit-transition: fill 200ms;
   transition: fill 200ms;
-  fill: var(--color-gold);
+  fill: var(--color-base);
 }
 
-.post-activity__count {
+.post__count {
   padding-left: var(--spacing-1);
+  font-weight: 700;
 }
 
 .comments {

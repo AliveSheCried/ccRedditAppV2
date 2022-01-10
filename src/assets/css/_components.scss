@@ -178,58 +178,49 @@
 
   &-title {
     margin-top: var(--spacing-2);
+    margin-bottom: var(--spacing-2);
     width: 100%;
     font-size: clamp(1.6rem, 5vw, 2.5rem);
     color: var(--color-text-dark-grey);
     font-weight: 700;
   }
 
+  &__img {
+    margin-bottom: 1em;
+  }
+
   &-activity {
-    @include fbox($content: center, $items: center);
+    @include fbox($content: space-between);
+    background: var(--color-background-grey);
+    border-radius: 0.5rem;
 
-    position: relative;
-
-    color: var(--color-white);
+    color: var(--color-base-shade-3);
     font-size: clamp(1.2rem, 5vw, 1.5rem);
+  }
 
-    & > * {
-      position: absolute;
-      padding: var(--spacing-1);
-      top: -50px;
-      width: 8rem;
-      background-color: rgba($color: #fff, $alpha: 0.7);
+  &__item {
+    &-ticks {
+      @include fbox();
+      margin: 0.5em;
+      padding-right: 0.5em;
     }
 
-    &__item {
-      &-ticks {
-        @include fbox();
-        left: -30px;
-      }
+    &-svg {
+      @include icons(var(--color-gold), var(--spacing-6), var(--spacing-6));
 
-      &-comments {
-        @include fbox();
-        left: 50px;
-      }
+      transition: all 400ms;
 
-      &-svg {
-        @include icons(
-          var(--color-base-shade-2),
-          var(--spacing-6),
-          var(--spacing-6)
-        );
-
-        transition: fill 400ms;
-
-        &:hover {
-          transition: fill 200ms;
-          fill: var(--color-gold);
-        }
+      &:hover {
+        transform: scale(1.01);
+        transition: fill 200ms;
+        fill: var(--color-base);
       }
     }
+  }
 
-    &__count {
-      padding-left: var(--spacing-1);
-    }
+  &__count {
+    padding-left: var(--spacing-1);
+    font-weight: 700;
   }
 }
 
