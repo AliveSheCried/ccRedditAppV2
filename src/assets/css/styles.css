@@ -65,7 +65,8 @@ img {
   max-height: 100%;
 }
 
-button {
+button,
+article {
   cursor: pointer;
 }
 
@@ -100,6 +101,45 @@ button {
 }
 
 .card:hover {
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.card_modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: var(--spacing-2) var(--spacing-3) var(--spacing-3) var(--spacing-2);
+  margin: 0 0 var(--spacing-2) 0;
+  width: auto;
+  max-width: 45rem;
+  min-width: 30rem;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-radius: var(--spacing-1);
+  -webkit-transition: -webkit-transform 500ms;
+  transition: -webkit-transform 500ms;
+  transition: transform 500ms;
+  transition: transform 500ms, -webkit-transform 500ms;
+}
+
+.card_modal:hover {
   -webkit-transition: -webkit-transform 300ms;
   transition: -webkit-transform 300ms;
   transition: transform 300ms;
@@ -508,5 +548,24 @@ header {
 
 .comments__detail-text {
   font-size: clamp(1.4rem, 5vw, 1.7rem);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 10;
 }
 /*# sourceMappingURL=styles.css.map */

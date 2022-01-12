@@ -1,5 +1,7 @@
 import React from "react";
 
 export const Card = (props) => {
-  return <div className="card">{props.children}</div>;
+  return (
+    <div className={props.modal ? props.modal : "card"}>{props.children}</div>
+  );
 };

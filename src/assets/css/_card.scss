@@ -19,3 +19,25 @@
     transform: scale(1.01);
   }
 }
+
+.card_modal {
+  @include fbox($content: flex-start, $items: flex-start, $direction: column);
+  @include box(
+    $p_top: var(--spacing-2),
+    $p_bot: var(--spacing-2),
+    $p_right: var(--spacing-3),
+    $p_left: var(--spacing-3),
+    $m_bot: var(--spacing-2),
+    $back_color: var(--color-white),
+    $bdr_rad: var(--spacing-1),
+    $ma_width: 45rem,
+    $mi_width: 30rem
+  );
+
+  transition: transform 500ms;
+
+  &:hover {
+    transition: transform 300ms;
+    transform: scale(1.01);
+  }
+}
