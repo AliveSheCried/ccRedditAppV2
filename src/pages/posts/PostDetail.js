@@ -1,21 +1,23 @@
 import React, { useState, Fragment } from "react";
+import { useDispatch } from "react-redux";
+import { getPermaLink, clearComments } from "../../store/comments-slice";
 import { Card } from "../../assets/ui/card/Card";
 import { convertUTCTimeToRelative } from "../../utils/convertTime/convert-time";
 import PostMeta from "./PostMeta";
 import Modal from "../../components/modal/Modal";
-import { Comments } from "./comments/Comments";
 
 export const PostDetail = ({
   author,
   title,
   score,
   createdDate,
-  comments,
+  commentCount,
   image,
-  id,
-  permalink,
+  permaLink,
 }) => {
+  const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
+  //console.log(author, permaLink);
 
   //check if post has image or not
   const postImage =
@@ -28,10 +30,20 @@ export const PostDetail = ({
   //convert received utc time to relative time
   const postRelativeTime = convertUTCTimeToRelative(createdDate);
 
+  const handleOpen = () => {
+    setIsOpen(true);
+    dispatch(getPermaLink(permaLink));
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+    dispatch(clearComments());
+  };
+
   return (
     <Fragment>
       <Card>
-        <article onClick={() => setIsOpen(true)}>
+        <article onClick={handleOpen}>
           <div className="post-meta">
             <div className="post-meta__author">
               Posted by
@@ -42,20 +54,20 @@ export const PostDetail = ({
           <div className="post-title">{title}</div>
 
           {postImage && postImage}
-          <PostMeta score={score} comments={comments} />
+          <PostMeta score={score} comments={commentCount} />
         </article>
       </Card>
 
       {isOpen && (
         <Modal
           isOpen={isOpen}
-          onClose={() => setIsOpen(false)}
+          onClose={handleClose}
           author={author}
           postRelativeTime={postRelativeTime}
           title={title}
           postImage={postImage}
           score={score}
-          comments={comments}
+          commentCount={commentCount}
         />
       )}
     </Fragment>

@@ -36,17 +36,14 @@ export const Posts = () => {
         title={post.title}
         score={post.score}
         createdDate={post.created_utc}
-        comments={post.num_comments}
+        commentCount={post.num_comments}
         image={post.url}
-        c1
         key={post.id}
         id={post.id}
         permaLink={post.permalink}
       />
     ));
 
-  // return <Fragment>{allPosts}</Fragment>;
-  //  return <div className="posts__wrapper">{allPosts}</div>;
   return (
     <Masonry
       breakpointCols={breakpointColumnsObj}

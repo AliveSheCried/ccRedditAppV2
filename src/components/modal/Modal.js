@@ -12,7 +12,7 @@ export default function Modal({
   title,
   postImage,
   score,
-  comments,
+  commentCount,
 }) {
   if (!isOpen) return null;
 
@@ -32,7 +32,7 @@ export default function Modal({
             <div className="post-title">{title}</div>
 
             {postImage && postImage}
-            <PostMeta score={score} comments={comments} />
+            <PostMeta score={score} comments={commentCount} />
             {isOpen && <Comments />}
           </article>
         </Card>
