@@ -133,19 +133,6 @@ article {
   background-color: var(--color-white);
   color: var(--color-black);
   border-radius: var(--spacing-1);
-  -webkit-transition: -webkit-transform 500ms;
-  transition: -webkit-transform 500ms;
-  transition: transform 500ms;
-  transition: transform 500ms, -webkit-transform 500ms;
-}
-
-.card_modal:hover {
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
-  transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
 }
 
 #root {
@@ -569,5 +556,27 @@ header {
   z-index: 10;
   overflow-y: auto;
   max-height: calc(100vh - 210px);
+}
+
+.skeleton-post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.skeleton-post__item {
+  margin: 0.5em;
 }
 /*# sourceMappingURL=styles.css.map */

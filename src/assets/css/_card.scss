@@ -33,11 +33,4 @@
     $ma_width: 45rem,
     $mi_width: 30rem
   );
-
-  transition: transform 500ms;
-
-  &:hover {
-    transition: transform 300ms;
-    transform: scale(1.01);
-  }
 }

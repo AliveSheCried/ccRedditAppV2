@@ -46,7 +46,7 @@ export const {
 
 //selectors
 export const getCommentsSuccessSelector = (state) => state.comments.comments;
-export const getCommentsStartSelector = (state) => state.comments.isLoading;
+export const getCommentsIsLoadingSelector = (state) => state.comments.isLoading;
 export const getCommentsErrorSelector = (state) => state.comments.isError;
 export const getPermaLinkSelector = (state) => state.comments.permalink;
 

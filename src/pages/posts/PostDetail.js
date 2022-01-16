@@ -1,10 +1,10 @@
-import React, { useState, Fragment } from "react";
-import { useDispatch } from "react-redux";
-import { getPermaLink, clearComments } from "../../store/comments-slice";
+import React, { Fragment, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Card } from "../../assets/ui/card/Card";
+import Modal from "../../components/modal/Modal";
+import { clearComments, getPermaLink } from "../../store/comments-slice";
 import { convertUTCTimeToRelative } from "../../utils/convertTime/convert-time";
 import PostMeta from "./PostMeta";
-import Modal from "../../components/modal/Modal";
 
 export const PostDetail = ({
   author,
@@ -17,7 +17,6 @@ export const PostDetail = ({
 }) => {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
-  //console.log(author, permaLink);
 
   //check if post has image or not
   const postImage =

@@ -281,3 +281,12 @@
   overflow-y: auto;
   max-height: calc(100vh - 210px);
 }
+
+///////////// skeleton
+.skeleton-post {
+  @include fbox($wrap: wrap);
+
+  &__item {
+    margin: 0.5em;
+  }
+}

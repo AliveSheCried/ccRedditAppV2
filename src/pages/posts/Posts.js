@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Fragment } from "react";
 import { PostDetail } from "./PostDetail";
 import { useDispatch, useSelector } from "react-redux";
+import { SkeletonPost } from "../../assets/ui/skeleton/SkeletonPost";
 import {
   getPostSelector,
   getPosts,
   getSubredditSelector,
   getSearchSelector,
   clearSearch,
+  getPostLoadingSelector,
 } from "../../store/posts-slice";
 import Masonry from "react-masonry-css";
 
@@ -22,6 +24,7 @@ export const Posts = () => {
   const posts = useSelector(getPostSelector);
   const subreddit = useSelector(getSubredditSelector);
   const search = useSelector(getSearchSelector);
+  const isLoading = useSelector(getPostLoadingSelector);
 
   useEffect(() => {
     dispatch(getPosts(subreddit));
@@ -45,12 +48,25 @@ export const Posts = () => {
     ));
 
   return (
-    <Masonry
-      breakpointCols={breakpointColumnsObj}
-      className="my-masonry-grid"
-      columnClassName="my-masonry-grid_column"
-    >
-      {allPosts}
-    </Masonry>
+    <Fragment>
+      {isLoading && (
+        <ul className="skeleton-post">
+          {Array(8)
+            .fill()
+            .map((post, index) => (
+              <li key={index} className="skeleton-post__item">
+                <SkeletonPost />
+              </li>
+            ))}
+        </ul>
+      )}
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column"
+      >
+        {allPosts}
+      </Masonry>
+    </Fragment>
   );
 };
