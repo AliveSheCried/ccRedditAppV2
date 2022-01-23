@@ -286,6 +286,8 @@
 .skeleton-post {
   @include fbox($wrap: wrap);
 
+  list-style: none;
+
   &__item {
     margin: 0.5em;
   }

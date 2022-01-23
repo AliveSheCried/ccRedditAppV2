@@ -12,7 +12,6 @@ Reddit Client from [Codecademy.com's](https://www.codecademy.com/) front end eng
 - **react-loading-skeleton**
 - **redux toolkit**
 - **tdd with jest & enzyme**
-- **react-router v6**
 
 ## Features
 

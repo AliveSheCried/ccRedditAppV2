@@ -5,7 +5,7 @@ export const fetchData = async (endPoint) => {
     const response = await fetch(`${API}${endPoint}.json`);
 
     if (!response.ok) {
-      throw new Error("Request failed");
+      throw Error("Request failed");
     }
 
     const json = await response.json();
@@ -16,6 +16,6 @@ export const fetchData = async (endPoint) => {
       return json.data.children.map((data) => data.data);
     }
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };

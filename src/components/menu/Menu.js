@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SkeletonMenu } from "../../assets/ui/skeleton/SkeletonMenu";
 import { setSubreddit } from "../../store/posts-slice";
+
 import {
   getSubRedditData,
   subRedditLoadingSelector,
@@ -13,7 +14,6 @@ export const Menu = () => {
   const dispatch = useDispatch();
   const subReddits = useSelector(subRedditSelector);
   const isLoading = useSelector(subRedditLoadingSelector);
-  //console.log(subReddits);
 
   const { width } = useWindowDimensions();
 
@@ -23,8 +23,9 @@ export const Menu = () => {
 
   if (width >= 685) {
     return (
-      <>
+      <Fragment>
         {isLoading && <SkeletonMenu />}
+
         <ul className="menu-full">
           {subReddits.map((sub) => (
             <li className="menu-full__item" key={sub.id}>
@@ -38,11 +39,11 @@ export const Menu = () => {
             </li>
           ))}
         </ul>
-      </>
+      </Fragment>
     );
   } else {
     return (
-      <>
+      <Fragment>
         {isLoading && <SkeletonMenu />}
         {!isLoading && (
           <div class="menu-collapsed">
@@ -64,7 +65,7 @@ export const Menu = () => {
             </select>
           </div>
         )}
-      </>
+      </Fragment>
     );
   }
 };
